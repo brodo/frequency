@@ -4,16 +4,76 @@
 		"selected_items":
 		[
 			[
+				"st",
+				"started"
+			],
+			[
+				"os",
+				"oscillator"
+			],
+			[
+				"on",
+				"onclick"
+			],
+			[
+				"demo2",
+				"demo2MultipleButton"
+			],
+			[
+				"o",
+				"oscillator2"
+			],
+			[
+				"star",
+				"startFrequency"
+			],
+			[
+				"sta",
+				"start"
+			],
+			[
+				"in",
+				"intervall"
+			],
+			[
+				"cu",
+				"currentStep"
+			],
+			[
+				"a",
+				"alt	Attr"
+			],
+			[
+				"t",
+				"textContent"
+			],
+			[
+				"de",
+				"demo1"
+			],
+			[
+				"c",
+				"createOscillator"
+			],
+			[
+				"dem",
+				"demo1Button"
+			],
+			[
+				"co",
+				"audioContext"
+			],
+			[
+				"d",
+				"dst"
+			],
+			[
 				"s",
 				"stylus"
 			],
 			[
 				"u",
 				"use"
-			],
-			[
-				"co",
-				"connect"
 			],
 			[
 				"re",
@@ -76,10 +136,6 @@
 				"getSelectedMessage"
 			],
 			[
-				"in",
-				"inbox"
-			],
-			[
 				"getMes",
 				"getMessagesForScreenAtSelectedIndex"
 			],
@@ -125,10 +181,6 @@
 			],
 			[
 				"an",
-				"answers"
-			],
-			[
-				"a",
 				"answers"
 			],
 			[
@@ -180,10 +232,6 @@
 				"Message"
 			],
 			[
-				"st",
-				"startIndex"
-			],
-			[
 				"mes",
 				"messages"
 			],
@@ -198,10 +246,6 @@
 			[
 				"se",
 				"selectedAswer"
-			],
-			[
-				"cu",
-				"currentAnswer"
 			],
 			[
 				"i",
@@ -312,10 +356,6 @@
 				"logFunctions"
 			],
 			[
-				"de",
-				"delay"
-			],
-			[
 				"targ",
 				"targetPos"
 			],
@@ -372,10 +412,6 @@
 				"jsonObjects"
 			],
 			[
-				"t",
-				"type"
-			],
-			[
 				"str",
 				"string"
 			],
@@ -422,10 +458,6 @@
 			[
 				"is",
 				"isString"
-			],
-			[
-				"o",
-				"options"
 			],
 			[
 				"tar",
@@ -482,43 +514,77 @@
 			[
 				"_s",
 				"_jsonStream"
-			],
-			[
-				"pro",
-				"progressfun"
-			],
-			[
-				"to",
-				"toString"
-			],
-			[
-				"da",
-				"dataListener"
-			],
-			[
-				"fire",
-				"firefigther"
-			],
-			[
-				"req",
-				"require"
-			],
-			[
-				"ser",
-				"serial"
-			],
-			[
-				"xm",
-				"xmlFile"
-			],
-			[
-				"port",
-				"port"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"contents": "{\n	\"folders\":\n	[\n		{\n			\"follow_symlinks\": true,\n			\"path\": \".\",\n      \"folder_exclude_patterns\": [\"node_modules\", \"public\"]\n		}\n	]\n}\n",
+			"file": "Frequency.sublime-project",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 134,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<head>\n  <title>Frequency</title>\n  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>\n  <link rel=\"stylesheet\" type=\"text/css\" href=\"css/main.css\">\n</head>\n<body>\n  <h1>Audio Frequency</h1>\n  <h2>Introduction</h2>\n  <p>\n    Hi, I'm Julian from <a href=\"http://en.wikipedia.org/wiki/Siegen\">Siegen</a>, Germany.\n    This interactive website is a lesson for week one of \n    <a href=\"https://www.coursera.org/course/musicproduction\">\n      Introduction To Music Production at Coursera.org\n    </a>.\n    It will explain audio frequency and explore why audio frequency is not a\n    <a href=\"http://en.wikipedia.org/wiki/Linear_scale\">\n      linear scale of measurement\n    </a>. \n  </p>\n  <p class=\"warning\">This website uses the \n  <a href=\"https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html\">\n    web audio API\n  </a>, which means you cannot use it in Internet Explorer and need an up to date browser.</p>\n  <h2>Lesson</h2>\n  <h3>Definition</h3>\n  Sound are <em>pressure waves</em> in a medium (usually the air). It's <em>frequency</em> describes\n  how many of these waves occur in one second. <em>Audio Frequency</em> is measured in \n  <a href=\"http://en.wikipedia.org/wiki/Hertz\">hertz</a> (hz). One herz is equivalent to one wave\n  per second.\n  <div class=\"demo\">\n    <h3>Example</h3>\n    <p>\n      In this example, you can listen to sign wave at a frequency of your choice!\n      The slider starts at 0hz and goes up to 30000hz.\n      Take a listen:\n    </p>\n    <p class=\"warning\">Be sure to turn down your stereo! He higher frequencies can be quite painful.</p>\n    <button id='demo1-start'>Start</button>\n    <input id= \"demo1-frequency\" type=\"range\" min=\"0\" max=\"30000\" value=\"0\">\n  </div>\n  <h3>Hearing Range</h3>\n  <p>\n    You may have realised while playing around with the slider, that you can only hear the \n    frequencies in the middle of it. There are several reasons for this:\n    <ol>\n      <li>The range of frequencies humans can hear is about 20 to 20000hz.</li>\n      <li>Your audio equipment has a certain <em>frequency response</em>.</li>\n      <li>0hz means there is no sound, so you can not hear anything there.</li>\n    </ol>    \n  </p>\n  <h3>Frequency spectrum</h3>\n  <p>\n    Frequency spectrums are usually drawn on a logarithmic scale. As an example, this frequency\n    spectrum shows shows which amplitude (response) my studio monitor can produce at which \n    frequency:\n    <img src=\"images/frequency_response.jpg\" alt=\"Image of a frequency response curve.\">\n    The x axis of the diagram is not linear. E.g. there are 900hz between 100hz and 1000hz and \n    9,000hz between 1000hz and 10,000hz but the distance between these two pairs of measurements is \n    the same in the image. \n\n    To find out why frequency spectrums are drawn this way consider the following example:\n  </p>\n  <div class=\"demo\">\n    <h3>Example</h3>\n    <p>\n      The button below generates two tones. The frequency of the first one is determined by the \n      value in the text box next to it. The second one is played at exactly double the frequency.\n      Try a couple of frequencies.\n    </p>\n    <input id=\"demo2-base\" value=\"550\">\n    <button id='demo2-multiple'>Generate two tones by multiplying with two</button>\n    </p> \n  </div>\n  <p>\n    Like you (hopefully) realized, it was always very easy to spot the difference between the two \n    tones. As an aside: the difference between two tones is called an \n    <a href=\"http://en.wikipedia.org/wiki/Interval_(music)\"intervall></a>\n    interval and this 1:2 interval is called an octave. \n    \n    Now try the same thing with the following example:\n  </p>\n  <div class=\"demo\">\n    <h3>Example</h3>\n    <p>\n      The button below generates two tones. The frequency of the first one is determined by the \n      value in the text box next to it. The second one is played at the given frequency plus 100hz.\n      Try a couple of frequencies.\n    </p>\n    <input id=\"demo3-base\" value=\"880\">\n    <button id='demo3-add'>Generate two tones by adding 100</button>\n    </p> \n  </div>\n  <p>\n    Hearing the differences between these two tones gets more and more difficult, the higher the base\n    frequency is. In other words, if the frequency is high, a small change is hard to hear. If the \n    frequency is low small differences are easy to hear. \n    This connection was first described by \n    <a href=\"http://en.wikipedia.org/wiki/Ernst_Heinrich_Weber\">Ernst Heinrich Weber</a>. \n    According to <a href=\"http://en.wikipedia.org/wiki/Weber-Fechner_law\">Wikipedia</a>: \n    <blockquote>\n      Weber's law states that the just-noticeable difference between two stimuli is proportional to \n      the magnitude of the stimuli. \n    </blockquote>\n    \n    Therefore the notes corresponding to low frequencies are all nearer to each other \n    (frequency wise) than the notes corresponding to the higher frequencies. \n  </p>\n\n  <h2>Reflection</h2>\n  <p>\n    Writing this took me way longer than expected. I tried out the web audio API and also Gulp, a new build tool. Gulp is great but took me about one hour to set up. I originally wanted to also put in two frequency sweeps (chirps), one linear and one exponential. But I ran out of time.  \n  </p>\n  <p>\n    I wanted to provide some deeper insight into an aspect of the topic which was not covered in the videos. I chose the logarithmic nature of the frequency spectrum because it came to my attention my when I watched the video but was not explained there.\n  </p>\n  <p>\n    I hope you got the whole idea and all the examples worked for you. I also hope you did not damage any equipment or ear. Thanks for reviewing! \n  </p>\n\n\n\n\n</body>\n<script type=\"text/javascript\" src=\"js/audio.js\"></script>\n<script type=\"text/javascript\" src=\"js/main.js\"></script>\n</html> ",
+			"file": "html/index.html",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 5867,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "html\n  font-size: 62.5%\n\nbody\n  font-family: 'Droid Sans', sans-serif\n  font-size: 1.4rem;\n\nimg\n  display: block\n\n.warning\n  background-color: #fcd209\n  border: 0.8rem solid #fcd209\n  border-radius: 0.4rem\n\nblockquote\n  border-left: 0.4rem solid black\n  padding-left: 0.4rem",
+			"file": "styles/main.styl",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 274,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "demo1Button = document.querySelector('#demo1-start')\ndemo1Slider = document.querySelector('#demo1-frequency')\n\ndemo1Button.onclick = ->\n  frequency = parseInt(demo1Slider.value, 10)\n  lesson.demo1.toggle()\n  lesson.demo1.setFrequency(frequency)\n  if lesson.demo1.isOn()\n    demo1Button.textContent = \"Stop\"\n  else\n    demo1Button.textContent = \"Start\"\n\ndemo1Slider.onchange = ->\n  frequency = parseInt(demo1Slider.value, 10) \n  lesson.demo1.setFrequency(frequency)\n\ndemo2MultipleButton = document.querySelector('#demo2-multiple')\ndemo2BaseInput = document.querySelector('#demo2-base')\ndemo2MultipleButton.onclick = ->\n  frequency = parseInt(demo2BaseInput.value, 10)\n  lesson.demo2.playExponential(frequency)\n\ndemo3AddButton = document.querySelector('#demo3-add')\ndemo3BaseInput = document.querySelector('#demo2-base')\ndemo3AddButton.onclick = ->\n  frequency = parseInt(demo3BaseInput.value, 10)\n  lesson.demo3.playLinear(frequency)\n",
+			"file": "scripts/main.coffee",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 933,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Context = window.AudioContext || window.webkitAudioContext\n\naudioContext = new Context()\ncreateOscillator = ->\n  oscillator = audioContext.createOscillator()\n  oscillator.connect(audioContext.destination)\n  oscillator.started = false\n  oscillator\noscillator = createOscillator()\n\nsetFrequency = (frequency) ->\n  oscillator.frequency.value = frequency\n\ntoggle = ->\n  if not oscillator.started\n    oscillator.start(0)\n    oscillator.started = true\n  else\n    oscillator.stop(0)\n    oscillator = createOscillator()\n\nplayExponential = (startFrequency) ->\n  oscillator1 = createOscillator()\n  oscillator1.frequency.value = startFrequency;\n  oscillator1.start(0)\n  setTimeout((->\n    oscillator1.stop(0)\n    oscillator2 = createOscillator()\n    oscillator2.frequency.value = startFrequency * 2;\n    oscillator2.start(0)\n    setTimeout((->\n      oscillator2.stop(0)\n    ),500)\n  ), 500)\n\nplayLinear = (startFrequency) ->\n  oscillator1 = createOscillator()\n  oscillator1.frequency.value = startFrequency;\n  oscillator1.start(0)\n  setTimeout((->\n    oscillator1.stop(0)\n    oscillator2 = createOscillator()\n    oscillator2.frequency.value = startFrequency + 100;\n    oscillator2.start(0)\n    setTimeout((->\n      oscillator2.stop(0)\n    ),500)\n  ), 500)\n\n\n\nisOn = -> oscillator.started\n\n\nwindow.lesson =\n  demo1:\n    setFrequency: setFrequency\n    toggle: toggle\n    isOn: isOn\n  demo2:\n    playExponential: playExponential\n  demo3:\n    playLinear: playLinear\n",
+			"file": "scripts/audio.coffee",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 1451,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "gulp = require('gulp')\ncoffee = require('gulp-coffee')\ngutil = require('gulp-util')\nstylus = require('gulp-stylus') \nconnect = require('connect')\nhttpServer = connect().use(connect.static('./public')) \n\nsrc =\n  coffee: './scripts/*.coffee'\n  html: './html/*.html'\n  img: './images/*'\n  stylusMain: './styles/main.styl'\n  stylusAll: './styles/*.styl'\n\ndst = \n  js: './public/js'\n  css: './public/css'\n  html: './public'\n  img: './public/images'\n\ngulp.task('coffee', ->\n  gulp.src(src.coffee)\n    .pipe(coffee(bare: true).on('error', gutil.log))\n    .pipe(gulp.dest(dst.js))\n)\n\ngulp.task('server', ->\n  httpServer.listen(3000)\n  gutil.log(\"Listening on port 3000\")\n)\n\ngulp.task('stylus', ->  \n    gulp.src(src.stylusAll)\n    .pipe(stylus(\n        use: ['nib']\n        compress: true\n    ))\n    .pipe(gulp.dest(dst.css))\n)\n\ngulp.task('html', ->\n  gulp.src(src.html)\n  .pipe(gulp.dest(dst.html))\n)\n\ngulp.task('images', ->\n  gulp.src(src.img)\n  .pipe(gulp.dest(dst.img))\n)\n\ngulp.task('watch', ->\n  gulp.watch(src.stylusAll, ['stylus'])\n  gulp.watch(src.coffee, ['coffee'])\n  gulp.watch(src.html, ['html'])\n  gulp.watch(src.img, ['images'])\n)\n\ngulp.task('default',['server', 'coffee','stylus', 'html', 'images', 'watch'])\n",
+			"file": "gulpfile.coffee",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 1216,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -526,6 +592,14 @@
 		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"sty",
+				"Set Syntax: Stylus"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"html",
 				"Snippet: html"
@@ -541,10 +615,6 @@
 			[
 				"coffe",
 				"Set Syntax: CoffeeScript"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"inst",
@@ -912,8 +982,8 @@
 	},
 	"file_history":
 	[
-		"/Users/brodo/Workspace/Frequency/node_modules/gulp/test/dest.js",
 		"/Users/brodo/Workspace/Frequency/public/index.html",
+		"/Users/brodo/Workspace/Frequency/node_modules/gulp/test/dest.js",
 		"/Users/brodo/Workspace/Frequency/node_modules/gulp-util/lib/isNull.js",
 		"/Users/brodo/Workspace/Frequency/.gitignore",
 		"/Users/brodo/Workspace/Frequency/gulpfile.coffee",
@@ -1043,7 +1113,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -1061,6 +1131,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"log",
+			"path",
 			"drawInboxAn",
 			"drawOutboxMessageTitle",
 			"drawInboxMessageTitle",
@@ -1186,9 +1258,7 @@
 			"clock",
 			"_metro",
 			"_delegateIndex",
-			"= Cli(",
-			"Cli(",
-			"command == DEFMSG"
+			"= Cli("
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1196,6 +1266,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"src",
 			"nextAnswer",
 			"previousAnswer",
 			"previousMessage",
@@ -1275,8 +1346,449 @@
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Frequency.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 134,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "html/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5867,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								516,
+								564
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "styles/main.styl",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 274,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								274,
+								274
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/Stylus/Stylus.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "scripts/main.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 933,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								424,
+								424
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "scripts/audio.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1451,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								247,
+								247
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "gulpfile.coffee",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1216,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								341,
+								341
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close"
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"syntax": "Packages/Better CoffeeScript/CoffeeScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 76.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1434,7 +1946,7 @@
 	"project": "Frequency.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 66.0
 	},
 	"save_all_on_build": true,
 	"select_file":

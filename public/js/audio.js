@@ -8,6 +8,7 @@ createOscillator = function() {
   var oscillator;
   oscillator = audioContext.createOscillator();
   oscillator.connect(audioContext.destination);
+  oscillator.started = false;
   return oscillator;
 };
 
@@ -18,12 +19,12 @@ setFrequency = function(frequency) {
 };
 
 toggle = function() {
-  switch (oscillator.playbackState) {
-    case oscillator.UNSCHEDULED_STATE:
-      return oscillator.start(0);
-    case oscillator.PLAYING_STATE:
-      oscillator.stop();
-      return oscillator = createOscillator();
+  if (!oscillator.started) {
+    oscillator.start(0);
+    return oscillator.started = true;
+  } else {
+    oscillator.stop(0);
+    return oscillator = createOscillator();
   }
 };
 
@@ -34,12 +35,12 @@ playExponential = function(startFrequency) {
   oscillator1.start(0);
   return setTimeout((function() {
     var oscillator2;
-    oscillator1.stop();
+    oscillator1.stop(0);
     oscillator2 = createOscillator();
     oscillator2.frequency.value = startFrequency * 2;
-    oscillator2.start();
+    oscillator2.start(0);
     return setTimeout((function() {
-      return oscillator2.stop();
+      return oscillator2.stop(0);
     }), 500);
   }), 500);
 };
@@ -51,18 +52,18 @@ playLinear = function(startFrequency) {
   oscillator1.start(0);
   return setTimeout((function() {
     var oscillator2;
-    oscillator1.stop();
+    oscillator1.stop(0);
     oscillator2 = createOscillator();
     oscillator2.frequency.value = startFrequency + 100;
-    oscillator2.start();
+    oscillator2.start(0);
     return setTimeout((function() {
-      return oscillator2.stop();
+      return oscillator2.stop(0);
     }), 500);
   }), 500);
 };
 
 isOn = function() {
-  return oscillator.playbackState === 1;
+  return oscillator.started;
 };
 
 window.lesson = {

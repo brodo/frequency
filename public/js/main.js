@@ -19,7 +19,6 @@ demo1Button.onclick = function() {
 demo1Slider.onchange = function() {
   var frequency;
   frequency = parseInt(demo1Slider.value, 10);
-  console.log(frequency);
   return lesson.demo1.setFrequency(frequency);
 };
 
