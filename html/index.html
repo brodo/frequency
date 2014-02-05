@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Frequency</title>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+  <h1>Audio Frequency</h1>
+  <h2>Introduction</h2>
+  <p>
+    Hi, I'm Julian from <a href="http://en.wikipedia.org/wiki/Siegen">Siegen</a>, Germany.
+    This interactive website is a lesson for week one of 
+    <a href="https://www.coursera.org/course/musicproduction">
+      Introduction To Music Production at Coursera.org
+    </a>.
+    It will explain audio frequency and explore why audio frequency is not a
+    <a href="http://en.wikipedia.org/wiki/Linear_scale">
+      linear scale of measurement
+    </a>. 
+  </p>
+  <p class="warning">This website uses the 
+  <a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">
+    web audio API
+  </a>, which means you cannot use it in Internet Explorer and need an up to date browser.</p>
+  <h2>Lesson</h2>
+  <h3>Definition</h3>
+  Sound are <em>pressure waves</em> in a medium (usually the air). It's <em>frequency</em> describes
+  how many of these waves occur in one second. <em>Audio Frequency</em> is measured in 
+  <a href="http://en.wikipedia.org/wiki/Hertz">hertz</a> (hz). One herz is equivalent to one wave
+  per second.
+  <div class="demo">
+    <h3>Example</h3>
+    <p>
+      In this example, you can listen to sign wave at a frequency of your choice!
+      The slider starts at 0hz and goes up to 30000hz.
+      Take a listen:
+    </p>
+    <p class="warning">Be sure to turn down your stereo! He higher frequencies can be quite painful.</p>
+    <button id='demo1-start'>Start</button>
+    <input id= "demo1-frequency" type="range" min="0" max="30000" value="0">
+  </div>
+  <h3>Hearing Range</h3>
+  <p>
+    You may have realised while playing around with the slider, that you can only hear the 
+    frequencies in the middle of it. There are several reasons for this:
+    <ol>
+      <li>The range of frequencies humans can hear is about 20 to 20000hz.</li>
+      <li>Your audio equipment has a certain <em>frequency response</em>.</li>
+      <li>0hz means there is no sound, so you can not hear anything there.</li>
+    </ol>    
+  </p>
+  <h3>Frequency spectrum</h3>
+  <p>
+    Frequency spectrums are usually drawn on a logarithmic scale. As an example, this frequency
+    spectrum shows shows which amplitude (response) my studio monitor can produce at which 
+    frequency:
+    <img src="images/frequency_response.jpg" alt="Image of a frequency response curve.">
+    The x axis of the diagram is not linear. E.g. there are 900hz between 100hz and 1000hz and 
+    9,000hz between 1000hz and 10,000hz but the distance between these two pairs of measurements is 
+    the same in the image. 
+
+    To find out why frequency spectrums are drawn this way consider the following example:
+  </p>
+  <div class="demo">
+    <h3>Example</h3>
+    <p>
+      The button below generates two tones. The frequency of the first one is determined by the 
+      value in the text box next to it. The second one is played at exactly double the frequency.
+      Try a couple of frequencies.
+    </p>
+    <input id="demo2-base" value="550">
+    <button id='demo2-multiple'>Generate two tones by multiplying with two</button>
+    </p> 
+  </div>
+  <p>
+    Like you (hopefully) realized, it was always very easy to spot the difference between the two 
+    tones. As an aside: the difference between two tones is called an 
+    <a href="http://en.wikipedia.org/wiki/Interval_(music)"intervall></a>
+    interval and this 1:2 interval is called an octave. 
+    
+    Now try the same thing with the following example:
+  </p>
+  <div class="demo">
+    <h3>Example</h3>
+    <p>
+      The button below generates two tones. The frequency of the first one is determined by the 
+      value in the text box next to it. The second one is played at the given frequency plus 100hz.
+      Try a couple of frequencies.
+    </p>
+    <input id="demo3-base" value="880">
+    <button id='demo3-add'>Generate two tones by adding 100</button>
+    </p> 
+  </div>
+  <p>
+    Hearing the differences between these two tones gets more and more difficult, the higher the base
+    frequency is. In other words, if the frequency is high, a small change is hard to hear. If the 
+    frequency is low small differences are easy to hear. 
+    This connection was first described by 
+    <a href="http://en.wikipedia.org/wiki/Ernst_Heinrich_Weber">Ernst Heinrich Weber</a>. 
+    According to <a href="http://en.wikipedia.org/wiki/Weber-Fechner_law">Wikipedia</a>: 
+    <blockquote>
+      Weber's law states that the just-noticeable difference between two stimuli is proportional to 
+      the magnitude of the stimuli. 
+    </blockquote>
+    
+    Therefore the notes corresponding to low frequencies are all nearer to each other 
+    (frequency wise) than the notes corresponding to the higher frequencies. 
+  </p>
+
+  <h2>Reflection</h2>
+  <p>
+    Writing this took me way longer than expected. I tried out the web audio API and also Gulp, a new build tool. Gulp is great but took me about one hour to set up. I originally wanted to also put in two frequency sweeps (chirps), one linear and one exponential. But I ran out of time.  
+  </p>
+  <p>
+    I wanted to provide some deeper insight into an aspect of the topic which was not covered in the videos. I chose the logarithmic nature of the frequency spectrum because it came to my attention my when I watched the video but was not explained there.
+  </p>
+  <p>
+    I hope you got the whole idea and all the examples worked for you. I also hope you did not damage any equipment or ear. Thanks for reviewing! 
+  </p>
+
+
+
+
+</body>
+<script type="text/javascript" src="js/audio.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+</html> 
