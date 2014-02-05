@@ -11,8 +11,7 @@ demo1Button.onclick = ->
     demo1Button.textContent = "Start"
 
 demo1Slider.onchange = ->
-  frequency = parseInt(demo1Slider.value, 10)
-  console.log(frequency)  
+  frequency = parseInt(demo1Slider.value, 10) 
   lesson.demo1.setFrequency(frequency)
 
 demo2MultipleButton = document.querySelector('#demo2-multiple')
